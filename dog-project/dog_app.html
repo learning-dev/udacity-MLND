@@ -14381,7 +14381,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
-<p><strong>Answer:</strong>  I have used inception (sequential) model and has a total parameter of 324433. All the parameters are trainable. Sequential model is used because of it's ease of understanding.</p>
+<p><strong>Answer:</strong>  I have used inception (sequential) model and has a total parameter of 324433. All the parameters are trainable. Sequential model is used because of it's ease of understanding. I choose the Global average pooling to convert the features into vectors. I have used softmax to predict the breeds of the dog. There was an issue of overfitting - I had play with a layer's (Dense) weight. There was a lot of trail and error in the process.</p>
 
 </div>
 </div>
