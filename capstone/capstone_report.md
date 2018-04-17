@@ -250,4 +250,6 @@ We have built a model that implements Optical Character Recognition using both R
 https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66
 
 https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767
+
+
 Recursive Recurrent Nets with Attention Modeling for OCR in the Wild - https://arxiv.org/pdf/1603.03101v1.pdf
