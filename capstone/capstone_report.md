@@ -25,10 +25,10 @@ The evaluation metric would be straightforward in the OCR. It is the accuracy of
 
 **Error calculation**
 
-For every word calculate how many of the characters we predicted correctly
-Use the mask to not consider (leave out) the padded characters on which our prediction was wrong
-Find the fraction of each word where we made mistakes in our character prediction
-Find the average fraction of each word that were mistakes
+- For every word calculate how many of the characters we predicted correctly
+- Use the mask to not consider (leave out) the padded characters on which our prediction was wrong
+- Find the fraction of each word where we made mistakes in our character prediction
+- Find the average fraction of each word that were mistakes
 
 
 ## II. Analysis
@@ -208,9 +208,20 @@ The model is robust enought to take any dataset with only condition of being sim
 
 ### Justification
 
+The two models were built i.e One using Conventional RNNs and other one using Bidirectional RNNs. Both models use the same dataset i.e. MIT OCR dataset with a slight modification. 
+We made an assumption that Bidirectional RNNs would increase the accuracy by decreasing the test accuracy. It is observed that there is significant increase in the accuracy i.e. 81% after using bidirectional RNNs
+
+Test error of the Conventional RNNs -: 7.828107%
+Test error of Bidirectional RNNs -: 2.343834%
+
+So that sums up to the accuracy of 91.2% in case of Conventional RNNs and 97.66% in case of Bidirectional RNNs
 
 
+**Accuracy of Conventional RNNs**
 
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-1.png)
+
+**Accuracy of Bi-directional RNNs**
 
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
 - _Are the final results found stronger than the benchmark result reported earlier?_
