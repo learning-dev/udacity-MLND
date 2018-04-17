@@ -39,7 +39,6 @@ The evaluation metric would be straightforward in the OCR. It is the accuracy of
 
 
 ## II. Analysis
-_(approx. 2-4 pages)_
 
 ### Data Exploration
 
@@ -84,6 +83,37 @@ The accuracy is compared by plotting a graph.
 _(approx. 3-5 pages)_
 
 ### Data Preprocessing
+
+All words lengths should be the same
+- Get every word to be the same length as the longest word in our dataset
+- Pad the words with empty characters
+
+`array([['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
+       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', '']], 
+      dtype='<U1')
+`
+
+
+`array([['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
+       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', '']], 
+      dtype='<U1')`
+
 In this section, all of your preprocessing steps will need to be clearly documented, if any were necessary. From the previous section, any of the abnormalities or characteristics that you identified about the dataset will be addressed and corrected here. Questions to ask yourself when writing this section:
 - _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
 - _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
