@@ -109,13 +109,77 @@ All words lengths should be the same
 
 ### Implementation
 
+- Download the modified version of the MIT OCR dataset from the ai.stanford.edu site. the file is letter.data.gz file.
+- We set up a helper function to download this gzipped file from the URL.
+- We set up another helper function to read the lines in the file. We use the gzip.open function from the gzip library. Use the CSV library to read in the file with tab delimited fields. Create a list of lines. There are roughly 52,000 character images, and these make up roughly 6800 words.
+- One of the field values is the actual letter that is represented by the image. The Next ID points to the ID of the next letter of the word. The next ID is -1 when it indicates the start of a new word. We don't use the next three columns in this dataset, Word ID, Position, and then the Fold. 
+There are no cross-validation performed here. 
+- We do use the remaining 128 fields, which are the pixel values of the 16x8 images. Each array is 1 image of 128 elements, and these elements can be either 0 or 1. -
+- These images correspond to the characters which make up words. Back to our code, we've just read in our data in the form of lines, and here we can sample the values present in a single line. These values should correspond to the file format that we just studied.
+
+**Features and Labels**
+
+- The input to our recurrent neural network, that is the features, are a sequence of character images where every image is 16x8 pixels. 
+- We set up a helper function to get the features and labels from the lines of data that we just read in. 
+- The data that we just read in has a unique sequential integer ID assigned to every line, so we sort on this character ID. Character sequences which make up words are maintained. 
+- Set up lists for the data and the target values. The data is the input sequence of images which make up words, and the target is the word as a sequence of actual characters, not images. 
+- Initialize next_id to -1. Remember that -1 indicates the start of a new word. The word and word_pixels variables keep track of the current word. Word comprises of characters which make up a word, and word_pixels are the images of those same characters. 
+- We'll iterate through all the lines to get the information that we need. The next_id is the field at index 2 in every line. Access the fields which hold the pixel values in the form of an array. These are fields which range from position 6 to position 134. Since these pixel values make up a 2D image matrix, reshape the array to be a 16x8 image. 
+- We have the image for a single character, and the character itself we appended to word_pixels and word. If the next_id field of the current line is equal to minus 1, that means we've completed passing 1 word. 
+- We can move onto the next word, and we append the current word to the data and target lists. Go ahead and reset word and word_pixels because we've moved onto the next word. 
+- We already have all the information that we require on the current word. Return the data and target. These are the features and labels from our training dataset. The length of the data list and the target list should be exactly the same, equal to 6877, the number of words in our training data. At this point, all our word sequences are of different lengths
 
 
 
-In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
-- _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
-- _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
-- _Was there any part of the coding process (e.g., writing complicated functions) that should be documented?_
+**Shuffle and Feed in Training Data**
+
+ - Our training data is setup. Training data should always be fed into our machine learning model in shuffled form so that there are no unwanted patterns that our model picks up in our input. 
+ - Shuffle indices using np.random.permutation and then set up shuffle features and corresponding labels. We'll now split this dataset into training and test data. 
+ - The training data will be used to generate our machine learning model parameters, and the test data will be used to measure how well our model performs on a dataset that it hasn't seen before. Sixty-six percent of our data will be used for training, and the remaining for test. 
+ - Split the data, as well as the labels into training and test portions. Let's take a look at the shape of the training data, which is the input to our RNN. There are 4538 words in our training dataset. 
+ - The input tensor that we feed into our recurrent neural network for training is of this form. This is a three-dimensional tensor which can be represented as you see on screen. The first dimension is the batch size. Neural networks are typically trained by feeding in our input data in batches so we don't run out of memory. 
+ - The batch_size corresponds to the number of words that we want to feed in in a single batch. The second dimension represents the length of every word. This is the sequence length of our RNN. 
+
+
+**Sequence Length Calculations**
+
+- RNNs require that the sequence length of the data that we feed into the neural network be exactly the same. However, we want to keep track of the exact sequence length of all the words that we feed in as our training data. We store the sequence length of every word that we feed in as a batch in the sequence_length variable, and we get the sequence length using these complicated computations that you see on-screen. Having the sequence length helps us in two specific ways.
+- This is the exact word length for each word in our batch. We'll pass the sequence length as a parameter when we build our RNN, and it'll help improve the RNN's accuracy because the RNN will now know the exact sequence length that it needs to get right. It won't worry about the padding characters.  
+- There are 14 input images for each word, but some of these input images will be all 0s, which represent the padding characters. The first line in the sequence length calculation checks to see whether the image contains any non-0 element. If it does, then it's an actual character. If it contains all 0s, it's a padding character.  
+- If this maximum value is 1, that's an actual character. If it's 0, it's a padding character. The tensor stored and used will contain a list of 14 elements for each word. The elements will be 1 for those characters which are actual non-padding characters and will be 0 for padding characters. 
+- the word cat, you'll get a length of 3. Cast this value to an integer and that is your sequence length.
+
+**Building the RNN**
+
+- Every layer in our RNN will have 300 neurons. This is a hyperparameter. You can change the number of neurons and see how your result changes. 
+- a long memory cell is used so that we get better performance. We'll use the GRU cell. 
+-  The input argument that you need to pass in includes the memory cell that it has to unroll through time. The dynamic RNN will automatically unroll the cell based on the number of steps that we've specified. 
+- The second input argument that you see here highlighted on-screen is our X placeholder for our training data. The sequence length is an optional parameter that we've chosen to specify here.
+- The sequence length helps in improving the correctness of our RNN and not its performance. If the RNN knows what characters are valid and what characters are padding characters in every input word, it'll know that it can copy through state and zero out outputs when it's working on the padding characters. It'll perform actual prediction for the real characters. 
+- The result of the RNN is a tuple, which specifies the predicted output and the last internal state of the RNN. The last internal state is not needed here.
+
+
+**Training and Evaluating the RNN**
+
+ - Calculate the accuracy of our neural network in optical character recognition. 
+ - Every word is made up of 14 characters, either real characters or padded ones, and there'll be 14 predictions, 1 for each character of the word.  
+ - we're only interested in the predictions for the actual characters, and we can completely ignore the padded character predictions and not include them in our count of errors. 
+ - To calculate the accuracy of our RNN output, compare the actual and the predicted labels for the actual characters. 
+ - Ignore the padding that we've applied to every word by masking out the padded characters. Here is where the sequence length that we calculated earlier will prove useful. 
+ - Choose the character with the highest probability value as our prediction. The labels that we fed in during training were also one-hot encoded. They didn't have probability values though. They had the value 1 for the character represented. 
+ - Calculate the number of characters that were not predicted correctly for every word. These are the mistakes that our RNN made in optical character recognition. 
+ - Determine the index of the predicted character, as well as the actual character. If the index of the predicted character matches the index of the actual character, the prediction was correct; otherwise it was wrong. 
+
+ **Setup the Bidirectional RNN**
+
+ - Construct the bidirectional RNN by using two conventional RNNs. The data to the backward RNN will be fed in reverse. Here is the architecture of the conventional RNN that we set up earlier. Every layer of our RNN shares a softmax layer for prediction. 
+ - This RNN contains 14 layers, because that is the length of every word of 300 neurons each. 
+  - Construct a bidirectional RNN by adding a backward RNN to the forward RNN which already exists. The forward RNN will be 14 layers of 300 neurons each. The backward RNN will also have 14 layers of 300 neurons each. 
+  - The input to this RNN will be fed in reverse. This will allow this RNN to make predictions based on future state. We'll take the output of the forward, as well as the backward RNN and concatenate them together and then feed this concatenated output to our softmax layer. 
+  -  We extract the features and labels from the data as before. Pad all the words to be the same length. That is 14. 
+  -  Set up the placeholders for the training data and the corresponding labels as before.
+
+Finally, acurracy is compared.
 
 ### Refinement
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
