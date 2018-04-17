@@ -225,12 +225,35 @@ So that sums up to the accuracy of 91.2% in case of Conventional RNNs and 97.66%
 
 ![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bidirecitonal_testerror.png)
 
+**Graph plot**
+
+Conventional RNNs:
+
+[alt text]()
+
+
+
+
+
+
+
 
 ## V. Conclusion
 
 
+We have built a model that implements Optical Character Recognition using both RNNs and Bidirectional RNNs. We have observed that there is significant increase in accuracy when you use Bidirectional Recurrent Neural Network, which is inline with our assumption that we had made earlier. There are other OCR implementations that can be used to implement this project. For now, we have used Bidirectional RNNs which has an accuracy of 97.66% approximately as compared to accuracy of 92% in case of Conventional Neural Network.
+
 
 -----------
+## References 
+
+**Dataset**: http://ai.stanford.edu/~btaskar/ocr/
+https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66
+https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767
+Recursive Recurrent Nets with Attention Modeling for OCR in the Wild - https://arxiv.org/pdf/1603.03101v1.pdf
+
+
+
 
 **Before submitting, ask yourself. . .**
 
