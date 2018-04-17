@@ -219,9 +219,13 @@ So that sums up to the accuracy of 91.2% in case of Conventional RNNs and 97.66%
 
 **Accuracy of Conventional RNNs**
 
-![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-1.png)
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/conventional_testeror.png)
 
 **Accuracy of Bi-directional RNNs**
+
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bidirecitonal_testerror.png)
+
+
 
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
 - _Are the final results found stronger than the benchmark result reported earlier?_
