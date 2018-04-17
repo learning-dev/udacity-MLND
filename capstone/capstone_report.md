@@ -23,6 +23,13 @@ The objective here is to show that Bidirectional Recurrent Neural Network works 
 
 The evaluation metric would be straightforward in the OCR. It is the accuracy of the prediction of the image text to the machine-encoded test. This would depend on various factors like size of the image and the quality of the image. There are labeled images and test images where the predicted label is compared with the labeled image for the accuracy.
 
+**Error calculation**
+
+For every word calculate how many of the characters we predicted correctly
+Use the mask to not consider (leave out) the padded characters on which our prediction was wrong
+Find the fraction of each word where we made mistakes in our character prediction
+Find the average fraction of each word that were mistakes
+
 
 ## II. Analysis
 
@@ -77,7 +84,7 @@ the forward RNN, built using the conventional RNN architecture that we've so far
 ### Benchmark
 
 There are various present models and parameters to benchmark with. Here, two models (RNNs and Bi-directional RNNs) are benchmarked with each other test.
-The accuracy is compared by plotting a graph.
+The accuracy is compared.
 
 
 ## III. Methodology
@@ -184,26 +191,27 @@ Finally, acurracy is compared.
 
 ### Refinement
 
+The refinement made is just tuning hyperparameters that is adjusting the no of neurons i.e. 300. There is a lot of trial and error involved. 
 
-
-
-In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
-- _Has an initial solution been found and clearly reported?_
-- _Is the process of improvement clearly documented, such as what techniques were used?_
-- _Are intermediate and final solutions clearly reported as the process is improved?_
+Another refinement that is done is building an Bidirectional RNN which reduces the test error rate by 81% approximately that will be discussed in the results section.
     
 
 ## IV. Results
 _(approx. 2-3 pages)_
 
 ### Model Evaluation and Validation
-In this section, the final model and any supporting qualities should be evaluated in detail. It should be clear how the final model was derived and why this model was chosen. In addition, some type of analysis should be used to validate the robustness of this model and its solution, such as manipulating the input data or environment to see how the model’s solution is affected (this is called sensitivity analysis). Questions to ask yourself when writing this section:
-- _Is the final model reasonable and aligning with solution expectations? Are the final parameters of the model appropriate?_
-- _Has the final model been tested with various inputs to evaluate whether the model generalizes well to unseen data?_
-- _Is the model robust enough for the problem? Do small perturbations (changes) in training data or the input space greatly affect the results?_
-- _Can results found from the model be trusted?_
+
+The final is model is aligned the with solution expected i.e. there is an improvement in the accuracy in Optical Character Recognition. 
+The bidirectional RNN that takes in reverse output an input which is time specific. It drastically increase the accuracy.
+The data set used here is MIT OCR dataset and model is evaluated by using split and shuffle technique of the dataset. Sixty-six percent of the data is used for training and rest is used for testing. 
+The model is robust enought to take any dataset with only condition of being similar dimension to that MIT OCR dataset
 
 ### Justification
+
+
+
+
+
 In this section, your model’s final solution and its results should be compared to the benchmark you established earlier in the project using some type of statistical analysis. You should also justify whether these results and the solution are significant enough to have solved the problem posed in the project. Questions to ask yourself when writing this section:
 - _Are the final results found stronger than the benchmark result reported earlier?_
 - _Have you thoroughly analyzed and discussed the final solution?_
