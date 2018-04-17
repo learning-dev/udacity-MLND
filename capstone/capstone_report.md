@@ -229,11 +229,11 @@ So that sums up to the accuracy of 91.2% in case of Conventional RNNs and 97.66%
 
 Conventional RNNs:
 
-![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/conventional_testeror.png)
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/2.439806.png)
 
 
 Bidirectional RNNs 
-![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bidirecitonal_testerror.png)
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/Bidirectinal.png)
 
 ## V. Conclusion
 
