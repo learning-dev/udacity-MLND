@@ -88,38 +88,31 @@ All words lengths should be the same
 - Get every word to be the same length as the longest word in our dataset
 - Pad the words with empty characters
 
-`array([['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', ''],
-       ['o', 'm', 'm', 'a', 'n', 'd', 'i', 'n', 'g', '', '', '', '', '']], 
-      dtype='<U1')
-`
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-1.png)
 
+[alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-2.png)
+ *The padded words*
 
-`array([['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', ''],
-       ['m', 'b', 'r', 'a', 'c', 'e', 's', '', '', '', '', '', '', '']], 
-      dtype='<U1')`
+**Tensor shape**
+- 6877 words
+- Each word padded to have 14 characters
+- Each character represented by 16x8 image
 
-In this section, all of your preprocessing steps will need to be clearly documented, if any were necessary. From the previous section, any of the abnormalities or characteristics that you identified about the dataset will be addressed and corrected here. Questions to ask yourself when writing this section:
-- _If the algorithms chosen require preprocessing steps like feature selection or feature transformations, have they been properly documented?_
-- _Based on the **Data Exploration** section, if there were abnormalities or characteristics that needed to be addressed, have they been properly corrected?_
-- _If no preprocessing is needed, has it been made clear why?_
+**Reshape the data so the image is a 1-D array of pixels**
+
+**Tensor shape**
+- 6877 words
+- Each an array with 14 characters (padded with empty strings as needed)
+**One-hot representation**
+- Each character has a feature vector of 26 (only lower case characters)
+ `padded_target.shape + (26,)`
+ **(6877, 14, 26)**
 
 ### Implementation
+
+
+
+
 In this section, the process for which metrics, algorithms, and techniques that you implemented for the given data will need to be clearly documented. It should be abundantly clear how the implementation was carried out, and discussion should be made regarding any complications that occurred during this process. Questions to ask yourself when writing this section:
 - _Is it made clear how the algorithms and techniques were implemented with the given datasets or input data?_
 - _Were there any complications with the original metrics or techniques that required changing prior to acquiring a solution?_
