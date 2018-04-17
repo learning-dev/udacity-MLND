@@ -58,26 +58,26 @@ The total number of words in our dataset - (6877, 6877)
 - Each word padded to have 14 characters
 - Each character represented by 16x8 image
 
-
-
-
-
-
-In this section, you will need to provide some form of visualization that summarizes or extracts a relevant characteristic or feature about the data. The visualization should adequately support the data being used. Discuss why this visualization was chosen and how it is relevant. Questions to ask yourself when writing this section:
-- _Have you visualized a relevant characteristic or feature about the dataset or input data?_
-- _Is the visualization thoroughly analyzed and discussed?_
-- _If a plot is provided, are the axes, title, and datum clearly defined?_
+Padded Data shape
+(6877, 14, -1)
 
 ### Algorithms and Techniques
-In this section, you will need to discuss the algorithms and techniques you intend to use for solving the problem. You should justify the use of each one based on the characteristics of the problem and the problem domain. Questions to ask yourself when writing this section:
-- _Are the algorithms you will use, including any default variables/parameters in the project clearly defined?_
-- _Are the techniques to be used thoroughly discussed and justified?_
-- _Is it made clear how the input data or datasets will be handled by the algorithms and techniques chosen?_
+
+There are no specific algorithm used here. The data is download and reshaped for accordingly. The target features are recognized and data is trained. 
+
+In addition this - we are also building a Recurrent Neural Network.  Every layer in our RNN will have 300 neurons. This is a hyperparameter. The change in the number of neurons according to how the result changes. The long memory cell is used so that we get better performance. The GRU cell is used.
+
+We'll then improve the results that we get with a conventional RNN architecture by using a bidirectional RNN. We have an additional layer called the backward RNN to which we also feed in our image inputs. 
+
+the forward RNN, built using the conventional RNN architecture that we've so far, 14 RNN layers of 300 neurons each. The bidirectional RNN though has an additional RNN layer, which is the backward RNN. This once again has 14 RNN layers of 300 neurons each, but it accepts the input in reverse.
+
+ The outputs of the forward and the backward RNN that we receive are then combined together. This simply stacks the outputs together. This concatenated output is then passed on to the shared softmax for prediction. And this insertion of a backward RNN makes our bidirectional RNN architecture.
+
 
 ### Benchmark
-In this section, you will need to provide a clearly defined benchmark result or threshold for comparing across performances obtained by your solution. The reasoning behind the benchmark (in the case where it is not an established result) should be discussed. Questions to ask yourself when writing this section:
-- _Has some result or value been provided that acts as a benchmark for measuring performance?_
-- _Is it clear how this result or value was obtained (whether by data or by hypothesis)?_
+
+There are various present models and parameters to benchmark with. Here, two models (RNNs and Bi-directional RNNs) are benchmarked with each other test.
+The accuracy is compared by plotting a graph.
 
 
 ## III. Methodology
@@ -100,7 +100,7 @@ In this section, you will need to discuss the process of improvement you made up
 - _Has an initial solution been found and clearly reported?_
 - _Is the process of improvement clearly documented, such as what techniques were used?_
 - _Are intermediate and final solutions clearly reported as the process is improved?_
-
+    
 
 ## IV. Results
 _(approx. 2-3 pages)_
