@@ -90,7 +90,7 @@ All words lengths should be the same
 
 ![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-1.png)
 
-[alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-2.png)
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/code_pad-2.png)
 
 **Tensor shape**
 - 6877 words
