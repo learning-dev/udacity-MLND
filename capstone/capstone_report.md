@@ -11,7 +11,7 @@ Optical Character Recognition is used to convert handwritten or printed text int
 
 Early Optical Character Recognition was mainly focused towards building tools to aid people who are blind. Since, then Optical Character Recognition has evolved to recognize sign boards for translation, navigation and for text-to-speech. OCR now has a wide range of applications from day-to-day applications to scientific applications.
 
-The aim is here to build a OCR using Bidirectionnal Recurrent Neural Network and compare the accuracy with the Conventional Neural Network
+The aim is here to build an OCR using Bidirectional Recurrent Neural Network and compare the accuracy with the Conventional Neural Network
 
 ### Problem Statement
 
@@ -48,7 +48,7 @@ The total number of words in our dataset - (6877, 6877)
 **Tensor shape**
 - 6877 words
 - Each word padded to have 14 characters
-- Each character represented by 16x8 image
+- Each character represented by a 16x8 image
 
 Padded Data shape
 (6877, 14, -1)
@@ -70,7 +70,7 @@ Padded Data shape
 
 **Representation of  Bidirectional RNN** - [source](http://colah.github.io/posts/2015-09-NN-Types-FP/) 
 
-There are no specific algorithm used here. The data is download and reshaped for accordingly. The target features are recognized and data is trained. 
+There is no specific algorithm used here. The data is download and reshaped for accordingly. The target features are recognized and data is trained. 
 
 In addition this - we are also building a Recurrent Neural Network.  Every layer in our RNN will have 300 neurons. This is a hyperparameter. The change in the number of neurons according to how the result changes. The long memory cell is used so that we get better performance. The GRU cell is used.
 
@@ -143,7 +143,7 @@ There are no cross-validation performed here.
 
  - Our training data is setup. Training data should always be fed into our machine learning model in shuffled form so that there are no unwanted patterns that our model picks up in our input. 
  - Shuffle indices using np.random.permutation and then set up shuffle features and corresponding labels. We'll now split this dataset into training and test data. 
- - The training data will be used to generate our machine learning model parameters, and the test data will be used to measure how well our model performs on a dataset that it hasn't seen before. Sixty-six percent of our data will be used for training, and the remaining for test. 
+ - The training data will be used to generate our machine learning model parameters, and the test data will be used to measure how well our model performs on a dataset that it hasn't seen before. Sixty-six percent of our data will be used for training, and the remaining for test data. 
  - Split the data, as well as the labels into training and test portions. Let's take a look at the shape of the training data, which is the input to our RNN. There are 4538 words in our training dataset. 
  - The input tensor that we feed into our recurrent neural network for training is of this form. This is a three-dimensional tensor which can be represented as you see on screen. The first dimension is the batch size. Neural networks are typically trained by feeding in our input data in batches so we don't run out of memory. 
  - The batch_size corresponds to the number of words that we want to feed in in a single batch. The second dimension represents the length of every word. This is the sequence length of our RNN. 
@@ -191,9 +191,9 @@ Finally, acurracy is compared.
 
 ### Refinement
 
-The refinement made is just tuning hyperparameters that is adjusting the no of neurons i.e. 300. There is a lot of trial and error involved. 
+The refinement made is just tuning hyperparameters that are adjusting the no of neurons i.e. 300. There is a lot of trial and error involved. 
 
-Another refinement that is done is building an Bidirectional RNN which reduces the test error rate by 81% approximately that will be discussed in the results section.
+Another refinement that is done is building a Bidirectional RNN which reduces the test error rate by 81% approximately that will be discussed in the results section.
     
 
 ## IV. Results
@@ -201,15 +201,15 @@ Another refinement that is done is building an Bidirectional RNN which reduces t
 
 ### Model Evaluation and Validation
 
-The final is model is aligned the with solution expected i.e. there is an improvement in the accuracy in Optical Character Recognition. 
-The bidirectional RNN that takes in reverse output an input which is time specific. It drastically increase the accuracy.
-The data set used here is MIT OCR dataset and model is evaluated by using split and shuffle technique of the dataset. Sixty-six percent of the data is used for training and rest is used for testing. 
-The model is robust enought to take any dataset with only condition of being similar dimension to that MIT OCR dataset
+The final model is aligned the with solution expected i.e. there is an improvement in the accuracy of Optical Character Recognition. 
+The bidirectional RNN that takes in reverse output an input which is time specific. It drastically increases the accuracy.
+The dataset used here is MIT OCR dataset and model is evaluated by using split and shuffle technique of the dataset. Sixty-six percent of the data is used for training and rest is used for testing. 
+The model is robust enough to take any dataset with the only condition of being the similar dimension to that MIT OCR dataset
 
 ### Justification
 
 The two models were built i.e One using Conventional RNNs and other one using Bidirectional RNNs. Both models use the same dataset i.e. MIT OCR dataset with a slight modification. 
-We made an assumption that Bidirectional RNNs would increase the accuracy by decreasing the test accuracy. It is observed that there is significant increase in the accuracy i.e. 81% after using bidirectional RNNs
+We made an assumption that Bidirectional RNNs would increase the accuracy by decreasing the test accuracy. It is observed that there is a significant increase in the accuracy i.e. 81% after using bidirectional RNNs
 
 Test error of the Conventional RNNs -: 7.828107%
 Test error of Bidirectional RNNs -: 2.343834%
@@ -239,9 +239,7 @@ Bidirectional RNNs
 ## V. Conclusion
 
 
-We have built a model that implements Optical Character Recognition using both RNNs and Bidirectional RNNs. We have observed that there is significant increase in accuracy when you use Bidirectional Recurrent Neural Network, which is inline with our assumption that we had made earlier. There are other OCR implementations that can be used to implement this project. For now, we have used Bidirectional RNNs which has an accuracy of 97.66% approximately as compared to accuracy of 92% in case of Conventional Neural Network.
-
-
+We have built a model that implements Optical Character Recognition using both RNNs and Bidirectional RNNs. We have observed that there is a significant increase in accuracy when you use Bidirectional Recurrent Neural Network, which is in line with our assumption that we had made earlier. There are other OCR implementations that can be used to implement this project. For now, we have used Bidirectional RNNs which has an accuracy of 97.66% approximately as compared to the accuracy of 92% in case of Conventional Neural Network.
 -----------
 ## References 
 
