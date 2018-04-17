@@ -51,7 +51,11 @@ _(approx. 2-4 pages)_
 
 ### Exploratory Visualization
 
-
+The total number of words in our dataset - (6877, 6877)
+Tensor shape
+- 6877 words
+- Each word padded to have 14 characters
+- Each character represented by 16x8 image
 
 
 
