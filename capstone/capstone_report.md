@@ -1,10 +1,9 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Project
-Joe Udacity  
-December 31st, 2050
+Mohammed Ayaz S
+
 
 ## I. Definition
-_(approx. 1-2 pages)_
 
 ### Project Overview
 
