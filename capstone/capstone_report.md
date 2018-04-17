@@ -20,11 +20,16 @@ Neural Network -  one group of algorithms used for machine learning that models 
 
 A recurrent neural network (RNN) is a class of artificial neural network where connections between units form a directed graph along a sequence. Recurrent Neural Networks (RNNs) are popular models that have shown great promise in many NLP tasks, but in this project - it is used to recognize hand-written character text.
 
-Bidirectional recurrent neural networks(RNN) are just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
-
 ![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/RNN.png)
 
 Representation of RNN - [source](https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767) 
+
+Bidirectional recurrent neural networks(RNN) are just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
+
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bd_RRN.png)
+
+Representation of  Bidirectional RNN - [source](http://colah.github.io/posts/2015-09-NN-Types-FP/) 
+
 
 
 
