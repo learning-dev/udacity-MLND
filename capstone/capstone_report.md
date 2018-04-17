@@ -15,20 +15,6 @@ The aim is here to build a OCR using Bidirectionnal Recurrent Neural Network and
 
 ### Problem Statement
 
-**Neural Network** -  one group of algorithms used for machine learning that models the data using graphs of Artificial Neurons, those neurons are a mathematical model that “mimics approximately how a neuron in the brain works”.
-
- **Recurrent neural network** (RNN) is a class of artificial neural network where connections between units form a directed graph along a sequence. Recurrent Neural Networks (RNNs) are popular models that have shown great promise in many NLP tasks, but in this project - it is used to recognize hand-written character text.
-
-![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/RNN.png)
-
-**Representation of RNN** - [source](https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767) 
-
-**Bidirectional recurrent neural networks**(RNN) are just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
-
-![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bd_RRN.png)
-
-**Representation of  Bidirectional RNN** - [source](http://colah.github.io/posts/2015-09-NN-Types-FP/) 
-
 Implement a model that recognizes a character set using Conventional RNN and also build the same model using Bidirectional Recurrent Neural Network then compare the accuracy of both models.
 
 The objective here is to show that Bidirectional Recurrent Neural Network works better than RNN for OCR and there is an acceptable improvement in the accuracy.
@@ -60,7 +46,22 @@ The total number of words in our dataset - (6877, 6877)
 Padded Data shape
 (6877, 14, -1)
 
-### Algorithms and Techniques
+### Algorithms and Techniques (Including Architecture)
+
+
+**Neural Network** -  one group of algorithms used for machine learning that models the data using graphs of Artificial Neurons, those neurons are a mathematical model that “mimics approximately how a neuron in the brain works”.
+
+ **Recurrent neural network** (RNN) is a class of artificial neural network where connections between units form a directed graph along a sequence. Recurrent Neural Networks (RNNs) are popular models that have shown great promise in many NLP tasks, but in this project - it is used to recognize hand-written character text.
+
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/RNN.png)
+
+**Representation of RNN** - [source](https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767) 
+
+**Bidirectional recurrent neural networks**(RNN) are just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
+
+![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/bd_RRN.png)
+
+**Representation of  Bidirectional RNN** - [source](http://colah.github.io/posts/2015-09-NN-Types-FP/) 
 
 There are no specific algorithm used here. The data is download and reshaped for accordingly. The target features are recognized and data is trained. 
 
@@ -80,7 +81,7 @@ The accuracy is compared by plotting a graph.
 
 
 ## III. Methodology
-_(approx. 3-5 pages)_
+
 
 ### Data Preprocessing
 
@@ -182,6 +183,10 @@ There are no cross-validation performed here.
 Finally, acurracy is compared.
 
 ### Refinement
+
+
+
+
 In this section, you will need to discuss the process of improvement you made upon the algorithms and techniques you used in your implementation. For example, adjusting parameters for certain models to acquire improved solutions would fall under the refinement category. Your initial and final solutions should be reported, as well as any significant intermediate results as necessary. Questions to ask yourself when writing this section:
 - _Has an initial solution been found and clearly reported?_
 - _Is the process of improvement clearly documented, such as what techniques were used?_
