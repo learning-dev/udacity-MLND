@@ -23,6 +23,7 @@ A recurrent neural network (RNN) is a class of artificial neural network where c
 Bidirectional recurrent neural networks(RNN) are just putting two independent RNNs together. The input sequence is fed in normal time order for one network, and in reverse time order for another. The outputs of the two networks are usually concatenated at each time step, though there are other options, e.g. summation.
 
 ![alt text](https://github.com/learning-dev/udacity-MLND/blob/master/capstone/images/RNN.png)
+
 Representation of RNN - [source](https://medium.com/@erikhallstrm/hello-world-rnn-83cd7105b767) 
 
 
