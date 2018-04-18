@@ -11,6 +11,8 @@ Optical Character Recognition is used to convert handwritten or printed text int
 
 Early Optical Character Recognition was mainly focused towards building tools to aid people who are blind. Since, then Optical Character Recognition has evolved to recognize sign boards for translation, navigation and for text-to-speech. OCR now has a wide range of applications from day-to-day applications to scientific applications.
 
+Optical Character Recognition is a sub-domain of Image Recognition. In recent years, there is huge improvement in this area, thanks to low computation cost and improvement in GPUs.
+The paper called ['Recursive Recurrent Nets with Attention Modeling for OCR in the Wild'](https://arxiv.org/pdf/1603.03101v1.pdf) gives an insight about what is being discussed here.  
 
 
 The aim is here to build an OCR using Bidirectional Recurrent Neural Network and compare the accuracy with the Conventional Neural Network
