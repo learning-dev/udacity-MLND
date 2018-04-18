@@ -11,6 +11,8 @@ Optical Character Recognition is used to convert handwritten or printed text int
 
 Early Optical Character Recognition was mainly focused towards building tools to aid people who are blind. Since, then Optical Character Recognition has evolved to recognize sign boards for translation, navigation and for text-to-speech. OCR now has a wide range of applications from day-to-day applications to scientific applications.
 
+
+
 The aim is here to build an OCR using Bidirectional Recurrent Neural Network and compare the accuracy with the Conventional Neural Network
 
 ### Problem Statement
@@ -240,6 +242,14 @@ Bidirectional RNNs
 
 
 We have built a model that implements Optical Character Recognition using both RNNs and Bidirectional RNNs. We have observed that there is a significant increase in accuracy when you use Bidirectional Recurrent Neural Network, which is in line with our assumption that we had made earlier. There are other OCR implementations that can be used to implement this project. For now, we have used Bidirectional RNNs which has an accuracy of 97.66% approximately as compared to the accuracy of 92% in case of Conventional Neural Network.
+
+The most interesting part of this project is the domain itself. It makes me ponder that level of improvement that is made in this field. We have designed programs to recognize images. In the next ten years, improvement in OCR could change the face of this world. 
+The biggest challenge that I came across was creating a RNNs and Bidirectional RNNs and getting the right accuracy. One thing that I learnt from this process is creating systems that are complex enough to get the job done and eliminating the need for high end hardware. 
+
+###Improvements
+
+The model built does have some limitations. It could be improved in many ways. One way could be recognizing words 'Cat' instead of only 'cat'. The dataset contains only words that are not capitalized. The model could be improved to recognize the images that are blurred out to some extent but this would lead to drop in the accuracy to some extent. Accuracy factor can also be improved by training the model longer i.e. using more images. In the end, there is always room for improvement.
+
 
 -----------
 ## References
