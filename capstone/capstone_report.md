@@ -193,9 +193,15 @@ There are no cross-validation performed here.
 
 Finally, acurracy is compared.
 
+
+
 ### Refinement
 
 The refinement made is just tuning hyperparameters that are adjusting the no of neurons i.e. 300. There is a lot of trial and error involved.
+
+The decrease in the no of neurons tooks very little time to training but there was a drop in the accuracy i.e it gave us the accuracy of around 67%
+
+When the no of neurons were increased, it took longer to train and accuracy was increased to 92% in case of RNNs and 97% in case of Bidirectional RNNs. 
 
 Another refinement that is done is building a Bidirectional RNN which reduces the test error rate by 81% approximately that will be discussed in the results section.
 
@@ -209,6 +215,8 @@ The final model is aligned the with solution expected i.e. there is an improveme
 The bidirectional RNN that takes in reverse output an input which is time specific. It drastically increases the accuracy.
 The dataset used here is MIT OCR dataset and model is evaluated by using split and shuffle technique of the dataset. Sixty-six percent of the data is used for training and rest is used for testing.
 The model is robust enough to take any dataset with the only condition of being the similar dimension to that MIT OCR dataset
+
+There are methods in the project that can handle the preprocessing like padding, setting the datasets in the right dimension. It means that it can handle datasets with some pre-processing. It is robust as we are using shuffle and split method for training the model which ensures that there is no overfitting and also ensures that model is learning at a great rate. 
 
 ### Justification
 
