@@ -56,14 +56,14 @@ This is how our *dataset* looks like -
 | 2             | m             | 3       | 1     |  2      | 0     | 0     |  0    |  0    |  0     |  
 
 
-*Fields*
-1. id: each letter is assigned a unique integer id
-2. letter: a-z
-3. next_id: id for next letter in the word, -1 if last letter
-4. word_id: each word is assigned a unique integer id (not used)
-5. position: position of letter in the word (not used)
-6. fold: 0-9 -- cross-validation fold
-7. p_i_j: 0/1 -- value of pixel in row i, column j
+**Fields**
+1. **id**: each letter is assigned a unique integer id
+2. **letter**: a-z
+3. **next_id**: id for next letter in the word, -1 if last letter
+4. **word_id**: each word is assigned a unique integer id (not used)
+5. **position**: position of letter in the word (not used)
+6. **fold**: 0-9 -- cross-validation fold
+7. **p_i_j**: 0/1 -- value of pixel in row i, column j
 
 
 Screenshot of the first few lines of our dataset- (first 20 columns).
