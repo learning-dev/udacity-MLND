@@ -253,7 +253,7 @@ The table below contains the results with various combinations of **Train-test s
 | ---------------      |:-------------:| :------------------:|  
 | 1. 66%(Tr)-44%(Te)    |   7.199088    |    2.439806         | 
 | 2. 80 (Tr)- 20%(Te)   |  7.482711     |    2.439806         |   
-| 3.                    |               |                     |
+| 3. 90 (Tr)- 10%(Te)   |  6.397875     |    2.361690         |                     
 
 ### Justification
 
