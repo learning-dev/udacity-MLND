@@ -230,8 +230,13 @@ The hyperparamters were tuned-
 | 1. E=5,  Bsze= 20     |   7.199088    |    2.439806         | 
 | 2. E=4  Bsze= 10      |   7.868795    |   2.674966         |   
 | 3. E=10  Bsze= 85      |  7.506508     |    2.768058     |   
-| 4. E=4  Bsze= 10    |  6.365501     |    2.152893%        |
+| 4. E=2  Bsze= 5   |  8.319199     |    2.152893%        |
 
+
+
+The way hyperparameters were tuned were done in a strategic way like testing out the lowest values for epoch and batch size, testing the higher values like the batch size of 85 and epoch value of 10 and choosing a mid-range value. The idea was to see, how the accuracy would effect by choosing the near-extreme values and then mid-range value to test how the model would react to the change. 
+
+Choosing a very low value for epoch and batch size showed very increase in the test error rate and it shot up 100% test error rate in some cases. Although the average error rate is around 8.32 % for an RNNs and 2.15% in case of Bidirectional RNNs.  On the other hand, choosing a very high value for epoch and batch size didn't improve the results either. It gave an average test error rate of 7.87% for RNNs and 2.67% for Bidirectional -RNN. When the values were chosen in between the results did improve as compared to the previous attempts i.e. 7.2% for RNNs and 2.4% for the Bidirectional RNNs.
 
 
 
@@ -271,6 +276,11 @@ The table below contains the results with various combinations of **Train-test s
 | 3. 90 (Tr)- 10%(Te)   |  6.397875     |    2.361690         |   
 | 4. 95 (Tr)- 5%(Te)    |  6.365501     |    2.152893%        |
 
+
+The accuracy was improved when the training set size was increased i.e the model would learn better than lower train set size. This would lead to lower test size set.  This is like making a model learn more and test is less.  This would lead to better accuracy scores on paper, but it is like asking the student to learn more and test him less. On the other hand, reducing the train set size and increasing the test set size would be like testing a student who spent less time studying. 
+
+The results considered in the conclusion is the balance between train-set and test-set size.  i.e. 66% train set size and 44% test size set. We are making sure that model is trained and tested well. 
+ 
 ### Justification
 
 The two models were built i.e One using Conventional RNNs and other one using Bidirectional RNNs. Both models use the same dataset i.e. MIT OCR dataset with a slight modification.
