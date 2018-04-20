@@ -218,6 +218,21 @@ There are no cross-validation performed here.
 
 Finally, acurracy is compared.
 
+**E** : epoch
+**Bsze** : batch size 
+**ER** : Test Error rate
+
+The parameters **train** and **test** is set to 66% train set and 44% test set.
+The hyperparamters were tuned- 
+
+| Hyperparameters(%)| RNNs (ER)%  |  Bi-directional RNNs| 
+| ---------------      |:-------------:| :------------------:|  
+| 1. E=5,  Bsze= 20     |   7.199088    |    2.439806         | 
+| 2. E=4  Bsze= 10      |   7.868795    |   2.674966         |   
+| 3. E=4  Bsze= 10      |      6.397875     |    2.361690     |   
+| 4. E=4  Bsze= 10    |  6.365501     |    2.152893%        |
+
+
 
 
 ### Refinement
