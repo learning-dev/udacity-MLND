@@ -52,14 +52,12 @@ This is how our *dataset* looks like -
 
 | id        | letter           |  next_id| word_id| position|  fold |  p_0_0|  p_0_1|  .....|  p_15_7|
 | ------------- |:-------------:| :------:| :-----:| :------:| :----:| :----:| :----:| :----:| :-----:| 
-| col 3 is      | right-aligned | $1600   |        |         |       |       |       |       |        |
-| col 2 is      | centered      |   $12   |        |         |       |       |       |       |        |  
-| zebra stripes | are neat      |    $1   |        |         |       |       |       |       |        |  
+| 1             | o             | 2       | 1      | 1       | 0     | 0     |  0    | 0     |  0     |
+| 2             | m             | 3       |  1     |  2      | 0     | 0     |  0    |  0    |  0     |  
 
 Screenshot of the first few lines of our dataset.
  ![alt text](images/dataset.png)
-
-
+1   o   2   1   1   0   0   0   0   0   0   0   0
 ### Exploratory Visualization
 
 The total number of words in our dataset - (6877, 6877)
