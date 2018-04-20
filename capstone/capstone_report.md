@@ -60,7 +60,6 @@ Screenshot of the first few lines of our dataset.
  ![alt text](images/dataset.png)
 
 
-
 ### Exploratory Visualization
 
 The total number of words in our dataset - (6877, 6877)
