@@ -53,11 +53,23 @@ This is how our *dataset* looks like -
 | id        | letter           |  next_id| word_id| position|  fold |  p_0_0|  p_0_1|  .....|  p_15_7|
 | ------------- |:-------------:| :------:| :-----:| :------:| :----:| :----:| :----:| :----:| :-----:| 
 | 1             | o             | 2       | 1      | 1       | 0     | 0     |  0    | 0     |  0     |
-| 2             | m             | 3       |  1     |  2      | 0     | 0     |  0    |  0    |  0     |  
+| 2             | m             | 3       | 1     |  2      | 0     | 0     |  0    |  0    |  0     |  
 
-Screenshot of the first few lines of our dataset.
- ![alt text](images/dataset.png)
-1   o   2   1   1   0   0   0   0   0   0   0   0
+
+*Fields*
+1. id: each letter is assigned a unique integer id
+2. letter: a-z
+3. next_id: id for next letter in the word, -1 if last letter
+4. word_id: each word is assigned a unique integer id (not used)
+5. position: position of letter in the word (not used)
+6. fold: 0-9 -- cross-validation fold
+7. p_i_j: 0/1 -- value of pixel in row i, column j
+
+
+Screenshot of the first few lines of our dataset- (first 20 columns).
+
+![alt text](images/dataset.png)
+
 ### Exploratory Visualization
 
 The total number of words in our dataset - (6877, 6877)
