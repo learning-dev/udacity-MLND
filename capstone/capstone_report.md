@@ -190,7 +190,7 @@ There are no cross-validation performed here.
 
 - Every layer in our RNN will have 300 neurons. This is a hyperparameter. You can change the number of neurons and see how your result changes.
 - a long memory cell is used so that we get better performance. We'll use the GRU cell.
--  The input argument that you need to pass in includes the memory cell that it has to unroll through time. The dynamic RNN will automatically unroll the cell based on the number of steps that we've specified.
+-  The input argument that you need to pass in includes the memory cell that it has to unroll through time. The dynamic RNN will automatically understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66oll the cell based on the number of steps that we've specified.
 - The second input argument that you see here highlighted on-screen is our X placeholder for our training data. The sequence length is an optional parameter that we've chosen to specify here.
 - The sequence length helps in improving the correctness of our RNN and not its performance. If the RNN knows what characters are valid and what characters are padding characters in every input word, it'll know that it can copy through state and zero out outputs when it's working on the padding characters. It'll perform actual prediction for the real characters.
 - The result of the RNN is a tuple, which specifies the predicted output and the last internal state of the RNN. The last internal state is not needed here.
