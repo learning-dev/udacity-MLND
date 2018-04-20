@@ -243,6 +243,15 @@ The model is robust enough to take any dataset with the only condition of being 
 
 There are methods in the project that can handle the preprocessing like padding, setting the datasets in the right dimension. It means that it can handle datasets with some pre-processing. It is robust as we are using shuffle and split method for training the model which ensures that there is no overfitting and also ensures that model is learning at a great rate. 
 
+The table below contains the results with various combinations of **Train-test split**
+
+
+| Test-Train split | RNNs    |  Bi-directional RNNs| 
+| ------------- |:-------------:| :------------------:|  
+| 1             | o             | 2                   | 
+| 2             | m             | 3                   |   
+
+
 ### Justification
 
 The two models were built i.e One using Conventional RNNs and other one using Bidirectional RNNs. Both models use the same dataset i.e. MIT OCR dataset with a slight modification.
