@@ -245,12 +245,15 @@ There are methods in the project that can handle the preprocessing like padding,
 
 The table below contains the results with various combinations of **Train-test split**
 
+ER - Test Error Rate
+Tr - Train
+Te - Test
 
-| Test-Train split | RNNs    |  Bi-directional RNNs| 
-| ------------- |:-------------:| :------------------:|  
-| 1             | o             | 2                   | 
-| 2             | m             | 3                   |   
-
+| Train-Test split(%)| RNNs (ER)%  |  Bi-directional RNNs| 
+| ---------------      |:-------------:| :------------------:|  
+| 1. 66%(Tr)-44%(Te)    |   7.199088    |    2.439806         | 
+| 2. 80 (Tr)- 20%(Te)   |  7.482711     |    2.439806         |   
+|                       |               |                     |
 
 ### Justification
 
