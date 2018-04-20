@@ -48,6 +48,14 @@ The evaluation metric would be straightforward in the OCR. It is the accuracy of
  The tab delimited data file (letter.data.gz) contains a line for each letter, with its label, pixel values, and several additional fields listed in letter.names file.
 
 
+This is how our *dataset* looks like - 
+
+| id        | letter           |  next_id| word_id | 
+| ------------- |:-------------:| :------:| :-----:|  
+| col 3 is      | right-aligned | $1600   |        |
+| col 2 is      | centered      |   $12   |        |
+| zebra stripes | are neat      |    $1   |        | 
+
 Screenshot of the first few lines of our dataset.
  ![alt text](images/dataset.png)
 
