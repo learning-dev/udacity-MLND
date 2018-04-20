@@ -53,7 +53,7 @@ The evaluation metric would be straightforward in the OCR. It is the accuracy of
 | id        | letter           |  next_id| word_id| position|  fold |  p_0_0|  p_0_1|  .....|  p_15_7|
 | ------------- |:-------------:| :------:| :-----:| :------:| :----:| :----:| :----:| :----:| :-----:| 
 | 1             | o             | 2       | 1      | 1       | 0     | 0     |  0    | 0     |  0     |
-| 2             | m             | 3       | 1     |  2      | 0     | 0     |  0    |  0    |  0     |  
+| 2             | m             | 3       | 1     |  2       | 0     | 0     |  0    |  0    |  0     |  
 
 
 **Fields**
