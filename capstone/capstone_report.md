@@ -50,11 +50,11 @@ The evaluation metric would be straightforward in the OCR. It is the accuracy of
 
 This is how our *dataset* looks like - 
 
-| id        | letter           |  next_id| word_id | 
-| ------------- |:-------------:| :------:| :-----:|  
-| col 3 is      | right-aligned | $1600   |        |
-| col 2 is      | centered      |   $12   |        |
-| zebra stripes | are neat      |    $1   |        | 
+| id        | letter           |  next_id| word_id| position|  fold |  p_0_0|  p_0_1|  .....|  p_15_7|
+| ------------- |:-------------:| :------:| :-----:| :------:| :----:| :----:| :----:| :----:| :-----:| 
+| col 3 is      | right-aligned | $1600   |        |         |       |       |       |       |        |
+| col 2 is      | centered      |   $12   |        |         |       |       |       |       |        |  
+| zebra stripes | are neat      |    $1   |        |         |       |       |       |       |        |  
 
 Screenshot of the first few lines of our dataset.
  ![alt text](images/dataset.png)
